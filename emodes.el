@@ -24,7 +24,8 @@
      (hs-minor-mode t)
      (which-func-mode t)
      (smart-operator-mode-on)
-     (light-symbol-mode t)))
+     ;(light-symbol-mode t)
+     ))
 
 (defvar colourful-style
   '(lambda ()
@@ -40,5 +41,10 @@
   "Set the mode-style to `style`"
   (set (make-local-variable 'mode-style) (symbol-name 'style))
   (funcall style))
+
+(defun emode-ide ()
+  "Run IDE mode functions on the current buffer"
+  (interactive)
+  (funcall 'ide-style))
 
 (provide 'emodes)
